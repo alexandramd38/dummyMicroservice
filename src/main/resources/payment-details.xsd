@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://localhost:8080/payment"
+           xmlns:tns="http://localhost:8080/payment" elementFormDefault="qualified">
+
+    <xs:element name="makePaymentRequest" type="tns:makePaymentRequestType"/>
+    <xs:element name="makePaymentResponse" type="tns:makePaymentResponseType"/>
+
+    <xs:complexType name="makePaymentRequestType">
+        <xs:sequence>
+            <xs:element name="firstName" type="xs:string"/>
+            <xs:element name="lastName" type="xs:string"/>
+            <xs:element name="paymentId" type="xs:int"/>
+            <xs:element name="cardNumber" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="makePaymentResponseType">
+        <xs:sequence>
+            <xs:element name="paymentId" type="xs:int"/>
+            <xs:element name="status" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
